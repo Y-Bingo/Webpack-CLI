@@ -1,0 +1,17 @@
+{
+  "name": "webpack-project-cli",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "bundle": "webpack"
+  },
+  "author": "YB",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^12.12.7",
+    "@types/webpack": "^4.39.8",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

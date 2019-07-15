@@ -20,6 +20,24 @@ module.exports = {
                         limit: 10240
                     }
                 }
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    {
+                        loader: "style-loader"  // 将JS字符串申城style 节点
+                    },
+                    {
+                        loader: "css-loader",   // 将css转化成CommonJS模块
+                        options: {
+                            // importLoader: 1,
+                            modules: true
+                        }
+                    },
+                    {
+                        loader: "sass-loader"   // 将sass编译成CSS
+                    }
+                ]
             }
         ]
     }

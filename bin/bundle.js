@@ -86,39 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/body.js":
-/*!*********************!*\
-  !*** ./src/body.js ***!
-  \*********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./public/img/avatar.jpg":
+/*!*******************************!*\
+  !*** ./public/img/avatar.jpg ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction Body () {\r\n    let root = document.querySelector( \"#root\" );\r\n    let body = document.createElement( \"div\" );\r\n    root.append( body );\r\n    body.innerHTML = \"Body\";\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Body);\n\n//# sourceURL=webpack:///./src/body.js?");
-
-/***/ }),
-
-/***/ "./src/footer.js":
-/*!***********************!*\
-  !*** ./src/footer.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction Footer () {\r\n    let root = document.querySelector( \"#root\" );\r\n    let footer = document.createElement( \"div\" );\r\n    root.append( footer );\r\n    footer.innerHTML = \"Footer\";\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Footer);\n\n//# sourceURL=webpack:///./src/footer.js?");
-
-/***/ }),
-
-/***/ "./src/header.js":
-/*!***********************!*\
-  !*** ./src/header.js ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nfunction Header () {\r\n    let root = document.querySelector( \"#root\" );\r\n    let header = document.createElement( \"div\" );\r\n    root.append( header );\r\n    header.innerHTML = \"Header\";\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (Header);\n\n//# sourceURL=webpack:///./src/header.js?");
+eval("module.exports = __webpack_require__.p + \"images/avatar.jpg\";\n\n//# sourceURL=webpack:///./public/img/avatar.jpg?");
 
 /***/ }),
 
@@ -130,7 +105,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nfunction Header () {\r\n    l
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./header */ \"./src/header.js\");\n/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./footer */ \"./src/footer.js\");\n/* harmony import */ var _body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./body */ \"./src/body.js\");\n\r\n\r\n\r\n\r\nObject(_header__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\nObject(_body__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\nObject(_footer__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _public_img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../public/img/avatar.jpg */ \"./public/img/avatar.jpg\");\n/* harmony import */ var _public_img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_public_img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n\r\n\r\n// 创建图片节点\r\nconst img = new Image();\r\nimg.src = _public_img_avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\r\nimg.classList.add( \"avatar\" );\r\n\r\ndocument.querySelector( \"#root\" ).append( img );\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

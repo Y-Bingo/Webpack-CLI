@@ -1,7 +1,8 @@
-import Header from "./header";
-import Footer from "./footer";
-import Body from "./body";
+import avatar from "../public/img/avatar.jpg";
 
-Header();
-Body();
-Footer();
+// 创建图片节点
+const img = new Image();
+img.src = avatar;
+img.classList.add( "avatar" );
+
+document.querySelector( "#root" ).append( img );

@@ -31,13 +31,23 @@ module.exports = {
                         loader: "css-loader",   // 将css转化成CommonJS模块
                         options: {
                             // importLoader: 1,
-                            modules: true
+                            // modules: true
                         }
                     },
                     {
                         loader: "sass-loader"   // 将sass编译成CSS
                     }
                 ]
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: "[name].[ext]",
+                        outputPath: "fonts/"
+                    }
+                }
             }
         ]
     }

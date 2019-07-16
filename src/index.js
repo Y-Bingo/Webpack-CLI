@@ -1,15 +1,11 @@
-import avatar from "../public/img/avatar.jpg";
+import "../public/css/index.scss";
 
-import style from "../public/css/index.scss";
+import createIconSpan from "./createIconSpan";
 
-import createAvatar from "./createAvatar";
+let root = document.querySelector("#root");
 
-// 创建图片节点
-const img = new Image();
-img.src = avatar;
-img.classList.add( style.avatar );
-
-let root = document.querySelector( "#root" );
-
-root.append( createAvatar() );
-root.append( img );
+root.append( createIconSpan( "&#xe626;" ) );
+root.append( createIconSpan( "&#xe627;" ) );
+root.append( createIconSpan( "&#xe628;" ) );
+root.append( createIconSpan( "&#xe62e;" ) );
+root.append( createIconSpan( "&#xe62f;" ) );

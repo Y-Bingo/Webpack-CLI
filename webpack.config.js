@@ -11,6 +11,11 @@ module.exports = {
         main: "./src/index.js",
         sub: "./src/index.js"
     },
+    devServer: {
+        contentBase: "./bin",
+        open: true,
+        port: 9334
+    },
     module: {
         rules: [
             {
@@ -56,12 +61,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin( ),
+        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin( {
             template: path.resolve( __dirname, "template/index.html" )
         } ),
     ],
     output: {
+        publicPath: "/",
         filename: "[name].bundle.js",
         path: path.resolve( __dirname, "bin" )
     },

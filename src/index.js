@@ -1,1 +1,1 @@
-console.lo("hellow");
+console.log( "hellow" );

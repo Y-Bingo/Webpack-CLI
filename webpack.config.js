@@ -1,6 +1,7 @@
 const path = require( 'path' );
 const HtmlWebpackPlugin = require( "html-webpack-plugin" );
 const { CleanWebpackPlugin } = require( "clean-webpack-plugin" );
+const webpack = require( "webpack" );
 
 module.exports = {
     mode: "development",
@@ -9,12 +10,13 @@ module.exports = {
     // production devtool: "cheap-module-source-map"
     entry: {
         main: "./src/index.js",
-        sub: "./src/index.js"
     },
     devServer: {
         contentBase: "./bin",
         open: true,
-        port: 9334
+        port: 9334,
+        hot: true,
+        hotOnly: true
     },
     module: {
         rules: [
@@ -49,6 +51,10 @@ module.exports = {
                 ]
             },
             {
+                test: /\.css$/,
+                use: [ "style-loader", "css-loader" ]
+            },
+            {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
                 use: {
                     loader: "file-loader",
@@ -65,6 +71,7 @@ module.exports = {
         new HtmlWebpackPlugin( {
             template: path.resolve( __dirname, "template/index.html" )
         } ),
+        new webpack.HotModuleReplacementPlugin()
     ],
     output: {
         publicPath: "/",

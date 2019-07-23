@@ -37,11 +37,11 @@
 .idea
 #.vs
 .gitattributes
-.package.json
-.package-lock.json
 node_modules  
 /jscoverage_lib  
 /bower_components  
 /dist/
 bin
 bin/
+/package.json
+/package-lock.json

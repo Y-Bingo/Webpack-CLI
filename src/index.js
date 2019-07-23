@@ -1,12 +1,15 @@
-import createDiv from "./createDiv.js";
+// import "@babel/polyfill"            // 先进语法注入
 
-import "../public/css/index.css";
+new Promise( ( resolve, reject ) => {
+    console.log( "promise" );
+    resolve();
+} );
 
-let num = 0;
-let btn = document.createElement("button");
-// btn.type = "button";
-btn.innerHTML = "创建div";
-btn.onclick = function(){
-    document.body.appendChild( createDiv(num++) );
+let arr = [ 1, 12 ];
+arr.map( ( i ) => {
+    console.log( i );
+} );
+
+class A {
+
 }
-document.body.appendChild( btn );

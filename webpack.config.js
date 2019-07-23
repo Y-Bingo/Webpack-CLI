@@ -9,17 +9,44 @@ module.exports = {
     // development devtool: "cheap-module-eval-source-map"
     // production devtool: "cheap-module-source-map"
     entry: {
-        main: "./src/index.js",
+        main: [ "./src/index.js" ],
     },
     devServer: {
         contentBase: "./bin",
         open: true,
-        port: 9334,
+        port: 9665,
         hot: true,
         hotOnly: true
     },
     module: {
         rules: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,        // 忽略 该文件夹
+                loader: "babel-loader",
+                options: {
+                    presets: [
+                        // [
+                        //     "@babel/preset-env",
+                        //     {
+                        //         useBuiltIns: 'usage'
+                        //     }
+                        // ],
+                    ],
+                    plugins: [
+
+                        [
+                            "@babel/plugin-transform-runtime",
+                            {
+                                "corejs": 2,
+                                "helpers": true,
+                                "regenerator": true,
+                                "useESModules": false
+                            }
+                        ]
+                    ]
+                }
+            },
             {
                 test: /\.(jpg|png|gif)$/,
                 use: {
@@ -53,16 +80,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [ "style-loader", "css-loader" ]
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: {
-                    loader: "file-loader",
-                    options: {
-                        name: "[name].[ext]",
-                        outputPath: "fonts/"
-                    }
-                }
             }
         ]
     },

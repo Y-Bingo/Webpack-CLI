@@ -14,7 +14,7 @@ module.exports = {
     devServer: {
         contentBase: "./bin",
         open: true,
-        port: 9665,
+        port: 9645,
         hot: true,
         hotOnly: true
     },
@@ -26,24 +26,13 @@ module.exports = {
                 loader: "babel-loader",
                 options: {
                     presets: [
-                        // [
-                        //     "@babel/preset-env",
-                        //     {
-                        //         useBuiltIns: 'usage'
-                        //     }
-                        // ],
-                    ],
-                    plugins: [
-
                         [
-                            "@babel/plugin-transform-runtime",
+                            "@babel/preset-env",
                             {
-                                "corejs": 2,
-                                "helpers": true,
-                                "regenerator": true,
-                                "useESModules": false
+                                useBuiltIns: "usage"
                             }
-                        ]
+                        ],
+                        "@babel/preset-react"
                     ]
                 }
             },

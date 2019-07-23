@@ -1,15 +1,10 @@
-// import "@babel/polyfill"            // 先进语法注入
+import React, { Component } from "react";
+import { render } from "react-dom";
 
-new Promise( ( resolve, reject ) => {
-    console.log( "promise" );
-    resolve();
-} );
-
-let arr = [ 1, 12 ];
-arr.map( ( i ) => {
-    console.log( i );
-} );
-
-class A {
-
+class App extends Component {
+    render () {
+        return <div>Hello World!</div>
+    }
 }
+
+render( <App />, document.querySelector( "#root" ) );

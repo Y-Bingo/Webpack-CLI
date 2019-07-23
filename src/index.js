@@ -1,10 +1,3 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
+import { add } from "./math";
 
-class App extends Component {
-    render () {
-        return <div>Hello World!</div>
-    }
-}
-
-render( <App />, document.querySelector( "#root" ) );
+console.log( add( 10, 23 ) );

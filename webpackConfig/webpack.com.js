@@ -1,23 +1,11 @@
 const path = require( 'path' );
 const HtmlWebpackPlugin = require( "html-webpack-plugin" );
 const { CleanWebpackPlugin } = require( "clean-webpack-plugin" );
-const webpack = require( "webpack" );
 
 module.exports = {
-    mode: "development",
-    devtool: "cheap-module-source-map",
+    entry: "./src/index.js",
     // development devtool: "cheap-module-eval-source-map"
     // production devtool: "cheap-module-source-map"
-    entry: {
-        main: [ "./src/index.js" ],
-    },
-    devServer: {
-        contentBase: "./bin",
-        open: true,
-        port: 9645,
-        hot: true,
-        hotOnly: true
-    },
     module: {
         rules: [
             {
@@ -29,10 +17,10 @@ module.exports = {
                         [
                             "@babel/preset-env",
                             {
+                                corejs: 2, // 声明corejs版本
                                 useBuiltIns: "usage"
                             }
                         ],
-                        "@babel/preset-react"
                     ]
                 }
             },
@@ -51,19 +39,9 @@ module.exports = {
             {
                 test: /\.scss$/,
                 use: [
-                    {
-                        loader: "style-loader"  // 将JS字符串申城style 节点
-                    },
-                    {
-                        loader: "css-loader",   // 将css转化成CommonJS模块
-                        options: {
-                            // importLoader: 1,
-                            // modules: true
-                        }
-                    },
-                    {
-                        loader: "sass-loader"   // 将sass编译成CSS
-                    }
+                    "style-loader",  // 将JS字符串申城style 节点
+                    "css-loader",   // 将css转化成CommonJS模块
+                    "sass-loader"   // 将sass编译成CSS
                 ]
             },
             {
@@ -75,13 +53,7 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin( {
-            template: path.resolve( __dirname, "template/index.html" )
-        } ),
-        new webpack.HotModuleReplacementPlugin()
+            template: "./template/index.html"
+        } )
     ],
-    output: {
-        publicPath: "/",
-        filename: "[name].bundle.js",
-        path: path.resolve( __dirname, "bin" )
-    },
 }

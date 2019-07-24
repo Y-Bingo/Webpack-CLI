@@ -3,7 +3,14 @@ const HtmlWebpackPlugin = require( "html-webpack-plugin" );
 const { CleanWebpackPlugin } = require( "clean-webpack-plugin" );
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: {
+        main: path.resolve( process.cwd(), "src/index.js" )
+    },
+    output: {
+        publicPath: './',
+        filename: '[name].bundle.js',
+        path: path.resolve( process.cwd(), 'bin' )
+    },
     // development devtool: "cheap-module-eval-source-map"
     // production devtool: "cheap-module-source-map"
     module: {
@@ -50,8 +57,34 @@ module.exports = {
             }
         ]
     },
+    optimization: {
+        splitChunks: {
+            chunks: "all",
+            minSize: 3000,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    name: "vendors"
+                },
+                default: {
+                    minChunks: 1,
+                    priority: -20,
+                    reuseExistingChunk: true,
+                    filename: "[name].js"
+                }
+            }
+        }
+    },
     plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin( {
+            verbose: true,
+        } ),
         new HtmlWebpackPlugin( {
             template: "./template/index.html"
         } )

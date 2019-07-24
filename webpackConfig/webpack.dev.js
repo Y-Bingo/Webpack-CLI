@@ -1,8 +1,7 @@
-const merge = require( 'webpack-merge' );
 const webpack = require( 'webpack' );
+const merge = require( 'webpack-merge' );
 
 const comConfig = require( './webpack.com' );
-
 
 const dev = {
     mode: 'development',
@@ -14,7 +13,7 @@ const dev = {
         hot: true
     },
     optimization: {
-        usedExports: true
+        usedExports: true           // 是否打包引用的模块
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()

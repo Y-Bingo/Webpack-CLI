@@ -8,7 +8,8 @@ module.exports = {
     },
     output: {
         publicPath: './',
-        filename: '[name].bundle.js',
+        filename: '[name].[hash].js',
+        chunkFilename: '[name].js',
         path: path.resolve( process.cwd(), 'bin' )
     },
     // development devtool: "cheap-module-eval-source-map"
@@ -59,26 +60,7 @@ module.exports = {
     },
     optimization: {
         splitChunks: {
-            chunks: "all",
-            minSize: 3000,
-            minChunks: 1,
-            maxAsyncRequests: 5,
-            maxInitialRequests: 3,
-            automaticNameDelimiter: '~',
-            name: true,
-            cacheGroups: {
-                vendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10,
-                    name: "vendors"
-                },
-                default: {
-                    minChunks: 1,
-                    priority: -20,
-                    reuseExistingChunk: true,
-                    filename: "[name].js"
-                }
-            }
+            chunks: "all"
         }
     },
     plugins: [

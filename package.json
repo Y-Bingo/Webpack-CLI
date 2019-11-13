@@ -4,9 +4,9 @@
   "description": "",
   "private": true,
   "scripts": {
-    "bundle": "webpack",
-    "watch": "webpack --watch",
-    "server": "webpack-dev-server"
+    "dev": "webpack-dev-server --config ./webpackConfig/wp.dev.js ",
+    "build": "webpack --config  ./webpackConfig/wp.prod.js",
+    "watch": "webpack --watch"
   },
   "author": "YB",
   "license": "ISC",
@@ -17,6 +17,7 @@
     "html-webpack-plugin": "^3.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "^3.9.0",
+    "webpack-merge": "^4.2.2"
   }
 }

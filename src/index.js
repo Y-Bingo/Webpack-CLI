@@ -9,4 +9,4 @@ Header( root );
 Body( root );
 Footer( root );
 
-console.log( "hello NTR ");
+console.log( "哈哈哈！");

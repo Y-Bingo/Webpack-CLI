@@ -8,3 +8,5 @@ let root = document.querySelector( "#root" );
 Header( root );
 Body( root );
 Footer( root );
+
+console.log( "hello NTR ");

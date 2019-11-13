@@ -9,6 +9,11 @@ module.exports = {
         main: "./src/index.js",
         sub: "./src/index.js"
     },
+    devServer: {
+        contentBase: "./bin",
+        open: true,
+        port: 9334
+    },
     plugins: [
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin( {

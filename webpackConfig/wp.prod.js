@@ -13,7 +13,7 @@ const prod = {
     devtool: 'cheap-module-source-map',
     output: {
         publicPath: './',
-        filename: '[name].bundle.js',
+        filename: '[name].[hash].js',
         path: path.resolve( ROOT_PATH, 'bin' )
     },
 }
